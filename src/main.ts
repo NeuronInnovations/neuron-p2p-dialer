@@ -13,10 +13,11 @@ import { ethers } from 'ethers'
 //import { CID, fromJSON } from 'multiformats/cid'
 //import all from 'it-all'
 //import first from 'it-first'
-import randomLocation from 'random-location';
+import randomLocation from 'random-location'
 import axios from 'axios'
-//import CryptoJS from 'crypto-js'
+import CryptoJS from 'crypto-js'
 import { Client, PrivateKey, TopicCreateTransaction, TopicMessageSubmitTransaction } from '@hashgraph/sdk'
+import { Libp2p } from 'libp2p/dist/src'
 //import SignatureMap from '@hashgraph/sdk/lib/transaction/SignatureMap'
 //import NodeAccountIdSignatureMap from '@hashgraph/sdk/lib/transaction/NodeAccountIdSignatureMap'
 //import { TransactionDescription } from 'ethers/lib/utils'
@@ -67,13 +68,13 @@ let wl: ethers.Wallet
 let hederaPrivateKey: PrivateKey // hedera pk
 let hederaClient: Client
 let conn: Connection
-
+let libp2p:Libp2p
 
 
 
 
 (async function () {
- const {libp2p} = await libp2pSetup()
+ const libp2p =  (await libp2pSetup()).libp2p;
 
   window.peerIdSpan.innerHTML =  libp2p.peerId.toString();
 
