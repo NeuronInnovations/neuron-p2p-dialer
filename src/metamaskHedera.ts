@@ -1,11 +1,11 @@
-import { Signer } from "@hashgraph/sdk/lib/Signer.js";
+//import { Signer } from "@hashgraph/sdk/lib/Signer.js";
 import abi from "./sc/abi.js";
 import { ethers } from "ethers";
 import { LedgerId, AccountId, Key, SignerSignature, AccountBalance, AccountInfo, TransactionRecord, Transaction, Executable } from "@hashgraph/sdk";
 
 const network = "testnet";
 
-
+/*
 
 export async function connectMetaMask (): Promise<{selectedAccount:any,provider:ethers.providers.Web3Provider,network:string}>{
   console.log(`\n=======================================`);
@@ -57,7 +57,7 @@ export async function connectMetaMask (): Promise<{selectedAccount:any,provider:
   
 }
 
-
+*/
 export async function getPhoneNumber (hederaAccount:string,contractAddress:string ,signer:ethers.Signer): Promise<{peerId:string,aliveTopic:number} | null >{
 	
 		console.log(`\n=======================================`);

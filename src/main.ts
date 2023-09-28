@@ -2,29 +2,29 @@ import './style.css'
 
 import { multiaddr } from '@multiformats/multiaddr'
 import { setupLibp2p as libp2pSetup } from './libp2p'
-import { connectMetaMask as metamaskHederaConnect, getPhoneNumber, tellHederaAboutAvailability } from './metamaskHedera'
+import {  getPhoneNumber, tellHederaAboutAvailability } from './metamaskHedera'
 import { pipe } from 'it-pipe'
 import { fromString as uint8ArrayFromString } from 'uint8arrays/from-string'
 import { toString as uint8ArrayToString } from 'uint8arrays/to-string'
-import { Signer, ethers } from 'ethers'
-import { Buffer } from "buffer";
+import { ethers } from 'ethers'
+//import { Buffer } from "buffer";
 
-import { peerIdFromString } from '@libp2p/peer-id'
-import { CID, fromJSON } from 'multiformats/cid'
-import all from 'it-all'
-import first from 'it-first'
-import randomLocation from 'random-location'
+//import { peerIdFromString } from '@libp2p/peer-id'
+//import { CID, fromJSON } from 'multiformats/cid'
+//import all from 'it-all'
+//import first from 'it-first'
+import randomLocation from 'random-location';
 import axios from 'axios'
-import CryptoJS from 'crypto-js'
-import { AccountBalanceQuery, AccountCreateTransaction, AccountId, Client, EthereumTransactionDataLegacy, FreezeTransaction, Hbar, Key, PrivateKey, PublicKey, Signer, SignerSignature, TopicCreateTransaction, TopicId, TopicMessageSubmitTransaction, Transaction, TransactionId, TransferTransaction } from '@hashgraph/sdk'
-import SignatureMap from '@hashgraph/sdk/lib/transaction/SignatureMap'
-import NodeAccountIdSignatureMap from '@hashgraph/sdk/lib/transaction/NodeAccountIdSignatureMap'
-import { TransactionDescription } from 'ethers/lib/utils'
-import Web3, { eth } from 'web3'
-import { Connection } from '@libp2p/interface/dist/src/connection'
-import { create } from 'multiformats/dist/types/src/hashes/digest'
-import { Libp2p } from 'libp2p/dist/src'
-import { ServiceMap } from '@libp2p/interface/dist/src'
+//import CryptoJS from 'crypto-js'
+import { Client, PrivateKey, TopicCreateTransaction, TopicMessageSubmitTransaction } from '@hashgraph/sdk'
+//import SignatureMap from '@hashgraph/sdk/lib/transaction/SignatureMap'
+//import NodeAccountIdSignatureMap from '@hashgraph/sdk/lib/transaction/NodeAccountIdSignatureMap'
+//import { TransactionDescription } from 'ethers/lib/utils'
+//import Web3, { eth } from 'web3'
+//import { Connection } from '@libp2p/interface/dist/src/connection'
+//import { create } from 'multiformats/dist/types/src/hashes/digest'
+//import { Libp2p } from 'libp2p/dist/src'
+//import { ServiceMap } from '@libp2p/interface/dist/src'
 
 
 
@@ -67,16 +67,13 @@ let wl: ethers.Wallet
 let hederaPrivateKey: PrivateKey // hedera pk
 let hederaClient: Client
 let conn: Connection
-let libp2p:Libp2p
-
-
 
 
 
 
 
 (async function () {
-  libp2p = await libp2pSetup()
+ const {libp2p} = await libp2pSetup()
 
   window.peerIdSpan.innerHTML =  libp2p.peerId.toString();
 
