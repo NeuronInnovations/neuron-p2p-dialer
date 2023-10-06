@@ -132,9 +132,9 @@ export async function tellHederaAboutAvailability  (contractAddress:string ,sign
 			//finalCount = await getCountState();
 			//console.log(`- Final count: ${finalCount}`);
 			console.log(`- Contract executed. Transaction hash: \n${peer} ✅`);
-		} catch (executeError) {
-			console.log(`- ${executeError.message.toString()}`);
-			alert("This didn't work")
+		} catch (executeError:any) {
+			
+			alert("Was telling Hedera about my availability but it didn't work ... Hedera says " + executeError.message.toString())
 			return false
 		}
 		return true

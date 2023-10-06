@@ -26,11 +26,7 @@ a:hover {
 }
 
 body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  
 }
 
 h1 {
@@ -39,10 +35,10 @@ h1 {
 }
 
 #app {
-  max-width: 1280px;
+  max-width: 320px;
   margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+  padding: 16px 0px;
+  
 }
 
 .logo {
@@ -104,6 +100,6 @@ button:focus-visible {
 }
 
 #connlistWrapperEl ul {
-  max-width: 400px;
-  overflow-x: auto;
+  max-width: 320px;
+
 }
